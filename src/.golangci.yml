@@ -1,0 +1,40 @@
+run:
+  timeout: 5m
+
+linters:
+  enable:
+    - asciicheck
+    - bodyclose
+    - depguard
+    - dogsled
+    - dupl
+    - errorlint
+    - exhaustive
+    - exportloopref
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofumpt
+    - gomnd
+    - gomodguard
+    - goprintffuncname
+    - godot
+    - lll
+    - nestif
+    - nilerr
+    - makezero
+    - misspell
+    - prealloc
+    - predeclared
+    - thelper
+    - unconvert
+    - unparam
+    - whitespace
+    - wsl
+
+linters-settings:
+  gocyclo:
+    min-complexity: 8
+
+service:
+  golangci-lint-version: 1.49.0

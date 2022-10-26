@@ -1,0 +1,55 @@
+<html>
+
+<style>
+    main, header {
+        width: 800px;
+        margin: 0 auto;
+        font-family: Verdana;
+        font-size: 12px;
+    }
+
+    form input:first-child {
+        width: 500px
+    }
+
+    form input {
+        border: 1px solid gray;
+        height: 20px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    main img {
+        width: 200px;
+        height: 200px;
+    }
+
+    main a {
+        display: block;
+    }
+
+    main div {
+        margin: 0 1em 1em 0;
+        background-color: lightyellow;
+    }
+</style>
+
+<header>
+    <h1>Главная страница</h1>
+    <form>
+        <input name="q" value="{{.Query}}">
+        <input type="submit" value="Найти">
+    </form>
+</header>
+<main class="grid">
+    {{range .ProductList}}
+    <div>
+        <img src="https://cdn3.static1-sima-land.com/items/{{.ID}}/0/400.jpg" />
+        <a href="/product/{{.ID}}/">{{.Name}}</a>
+    </div>
+    {{end}}
+</main>
+</html>
